@@ -37,6 +37,8 @@ module.exports = {
       "error", {
           "devDependencies": [
               "src/**/*.test.js",
+              "jest/setup.js",
+              "webpack/config.*.js",
           ]
       }
     ],
