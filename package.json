@@ -4,6 +4,8 @@
   "description": "A tiny form example using React and Redux",
   "private": true,
   "scripts": {
+    "dev": "webpack-dev-server --open --config webpack/config.dev.js",
+    "build": "webpack --config webpack/config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
