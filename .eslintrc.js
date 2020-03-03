@@ -35,11 +35,11 @@ module.exports = {
     'import/no-unresolved': ['error', { commonjs: true, caseSensitive: true }],
     "import/no-extraneous-dependencies": [
       "error", {
-          "devDependencies": [
-              "src/**/*.test.js",
-              "jest/setup.js",
-              "webpack/config.*.js",
-          ]
+        "devDependencies": [
+            "src/**/*.test.js",
+            "jest/setup.js",
+            "webpack/config.*.js",
+        ]
       }
     ],
   }
