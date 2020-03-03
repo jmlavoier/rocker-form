@@ -13,6 +13,12 @@ module.exports = {
     path: PATHS.public,
   },
 
+  resolve: {
+    alias: {
+      '~': PATHS.src,
+    }
+  },
+
   module: {
     rules: [
       {

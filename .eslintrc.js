@@ -48,6 +48,12 @@ module.exports = {
       "webpack": {
         "config": "./webpack/config.dev.js",
       },
+      "alias": {
+        "map": [
+          ['~', './src'],
+        ],
+        "extensions": ['.js', '.jsx', '.json']
+      },
     },
   },
 };
