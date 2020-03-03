@@ -9,11 +9,11 @@ import theme from './styles/theme';
 import App from './components/App/App';
 
 ReactDOM.render(
-  <Provider store={store}>
+  <ThemeProvider theme={theme}>
     <GlobalFonts />
-    <ThemeProvider theme={theme}>
+    <Provider store={store}>
       <App />
-    </ThemeProvider>
-  </Provider>,
+    </Provider>
+  </ThemeProvider>,
   document.getElementById('example'),
 );
