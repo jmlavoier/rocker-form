@@ -5,16 +5,16 @@ import 'jest-styled-components';
 import toJson from 'enzyme-to-json';
 import theme from '../../styles/theme';
 
-import Field from './Field';
+import Input from './Input';
 
-describe('Field', () => {
+describe('Input', () => {
   it('should advise that it is invalid', () => {
     const wrapper = mount(
       <ThemeProvider theme={theme}>
-        <Field
+        <Input
           name="email"
           value="teste"
-          isValid={false}
+          errorMessage={'should show error message'}
           theme={theme}
           onChange={() => {}}
         />
@@ -27,7 +27,7 @@ describe('Field', () => {
   it('should set input name, value, placeholder', () => {
     const wrapper = mount(
       <ThemeProvider theme={theme}>
-        <Field
+        <Input
           name="email"
           placeholder="email"
           value="teste"
@@ -46,7 +46,7 @@ describe('Field', () => {
   it('should show label name', () => {
     const wrapper = mount(
       <ThemeProvider theme={theme}>
-        <Field
+        <Input
           name="email"
           value="teste"
           isValid={false}

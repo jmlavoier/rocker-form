@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 const getColor = (color) => ({ theme }) => theme.getColor(color);
 
-const validationStyle = ({ isValid = true }) => {
+const validationInput = ({ isValid = true }) => {
   const colors = {
     [true]: {
       border: getColor('blue'),
@@ -23,17 +23,38 @@ const validationStyle = ({ isValid = true }) => {
   `;
 };
 
+const validationWrapper = ({ isValid = true }) => {
+  if (!isValid) {
+    return css`
+      &:before {
+        content: "!";
+        color: ${getColor('danger')};
+        position: absolute;
+        left: 10px;
+        bottom: 8px;
+        font-size: 18px;
+        font-weight: 900;
+      };
+    `;
+  }
+
+  return null;
+};
+
 export const Wrapper = styled.div`
   margin: 0.5em 0;
   width: 100%;
+  position: relative;
+
+  ${validationWrapper}
 `;
 
-export const Input = styled.input`
+export const InputStyled = styled.input`
   width: 100%;
   box-sizing: border-box;
   color: ${({ theme }) => theme.getColor('text')};
   background-color: transparent;
-  ${validationStyle}
+  ${validationInput}
   border-radius: 0.2rem;
   padding: 0.5em 0.75em;
   font-size: 18px;
@@ -46,4 +67,12 @@ export const Label = styled.label`
   width: 100%;
   display: inline-block;
   margin: 0.5em 0;
+  position: relative;
+
+  &:after {
+    content: "${({ errorMessage }) => errorMessage}";
+    position: absolute;
+    right: 0;
+    color: ${getColor('danger')}
+  }
 `;
