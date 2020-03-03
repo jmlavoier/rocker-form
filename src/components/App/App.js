@@ -12,7 +12,7 @@ import Box from '../Box';
 
 const App = () => (
   <Wrapper>
-    <Box>
+    <Box width="400px">
       <Header>
         Rocker Form
       </Header>
