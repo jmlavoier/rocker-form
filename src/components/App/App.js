@@ -7,21 +7,25 @@ import {
 } from './App.style';
 
 import Field from '../Field';
+import Button from '../Button';
+import Box from '../Box';
 
 const App = () => (
   <Wrapper>
-    <Header>
-      Rocker Form
-    </Header>
-    <Content>
-      <Field name="ssn" />
-      <Field name="email" />
-      <Field name="phone" />
-      <Field name="country" />
-    </Content>
-    <Footer>
-      Submit
-    </Footer>
+    <Box>
+      <Header>
+        Rocker Form
+      </Header>
+      <Content>
+        <Field name="ssn" />
+        <Field name="email" />
+        <Field name="phone" />
+        <Field name="country" />
+      </Content>
+      <Footer>
+        <Button>Submit</Button>
+      </Footer>
+    </Box>
   </Wrapper>
 );
 
