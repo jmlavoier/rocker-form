@@ -1,8 +1,13 @@
+/* eslint-disable no-console */
 import { useSelector, useDispatch } from 'react-redux';
 
-import { changeField as actionChangeField, setMessages } from '~/store/formState/actions';
+import {
+  changeField as actionChangeField,
+  setMessages,
+  eraseForm,
+} from '~/store/formState/actions';
 
-const useForm = (stateName, fields, { onSuccess = () => {}, onFail = () => {} } = {}) => {
+const useForm = (stateName, fields) => {
   const formState = useSelector((state) => state[stateName]);
   const dispatch = useDispatch();
 
@@ -15,12 +20,12 @@ const useForm = (stateName, fields, { onSuccess = () => {}, onFail = () => {} } 
   };
 
   const onSubmit = () => {
-    const errors = Object.keys(fields).reduce((err, fieldName) => {
+    const fieldsArray = Object.keys(fields).reduce((accFields, fieldName) => {
       const errorMessage = fields[fieldName]
         .validation(formState[fieldName].value);
 
       return [
-        ...err,
+        ...accFields,
         {
           fieldName,
           errorMessage,
@@ -28,12 +33,14 @@ const useForm = (stateName, fields, { onSuccess = () => {}, onFail = () => {} } 
       ];
     }, []);
 
-    if (errors.length) {
-      dispatch(setMessages(errors));
-      return onFail();
+    const isValid = fieldsArray.every((field) => field.errorMessage === '');
+
+    if (isValid) {
+      console.log('Success!');
+      return dispatch(eraseForm());
     }
 
-    return onSuccess();
+    return dispatch(setMessages(fieldsArray));
   };
 
   return [formState, changeField, onSubmit];

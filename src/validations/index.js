@@ -6,7 +6,7 @@ import countryRules from './countryRules';
 const createValidation = (rules) => (value) => {
   const evalued = rules(value);
   const messages = Object.keys(evalued);
-  return messages.find((msg) => evalued[msg] === true);
+  return messages.find((msg) => evalued[msg] === true) || '';
 };
 
 export default {
