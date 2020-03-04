@@ -14,23 +14,24 @@ import {
   Footer,
 } from './App.style';
 
+const fieldsSchema = {
+  ssn: {
+    validation: (value) => (!value ? 'should have at least one character' : ''),
+  },
+  email: {
+    validation: (value) => (!value ? 'should have at least one character' : ''),
+  },
+  phone: {
+    validation: (value) => (!value ? 'should have at least one character' : ''),
+  },
+  country: {
+    validation: (value) => (!value ? 'should have at least one character' : ''),
+  },
+};
+
 const App = () => {
   const countries = useFetchCountries();
-  const [fields, changeField] = useForm('form', {
-    ssn: {
-      validation: (value) => (!value ? 'should have at least one character' : ''),
-    },
-    email: {
-      validation: (value) => (!value ? 'should have at least one character' : ''),
-    },
-    phone: {
-      validation: (value) => (!value ? 'should have at least one character' : ''),
-    },
-    country: {
-      validation: (value) => (!value ? 'should have at least one character' : ''),
-    },
-  });
-
+  const [fields, changeField, onSubmit] = useForm('form', fieldsSchema);
   const {
     ssn, email, phone, country,
   } = fields;
@@ -69,7 +70,7 @@ const App = () => {
           />
         </Content>
         <Footer>
-          <Button>Submit</Button>
+          <Button type="button" onClick={onSubmit}>Submit</Button>
         </Footer>
       </Box>
     </Wrapper>

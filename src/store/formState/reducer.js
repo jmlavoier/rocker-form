@@ -1,24 +1,24 @@
-import { CHANGE_FIELD, ERASE_FORM } from './constants';
+import {
+  CHANGE_FIELD,
+  ERASE_FORM,
+  SET_MESSAGES,
+} from './constants';
 
 const initialState = {
   ssn: {
     value: '',
-    isValid: true,
     errorMessage: '',
   },
   email: {
     value: '',
-    isValid: true,
     errorMessage: '',
   },
   phone: {
     value: '',
-    isValid: true,
     errorMessage: '',
   },
   country: {
     value: '',
-    isValid: true,
     errorMessage: '',
   },
 };
@@ -43,8 +43,24 @@ const form = (state = initialState, action) => {
       };
     }
 
+    case SET_MESSAGES: {
+      const { errors } = action.payload;
+
+      return {
+        ...state,
+        ...errors.reduce((acc, curr) => ({
+          ...acc,
+          [curr.fieldName]: {
+            value: state[curr.fieldName].value,
+            errorMessage: curr.errorMessage,
+          },
+        }), {}),
+      };
+    }
+
     case ERASE_FORM:
       return initialState;
+
     default: return state;
   }
 };
