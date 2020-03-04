@@ -20,6 +20,7 @@ const Select = ({
         onChange={onChange}
         isValid={isValid}
       >
+        <option key="default" value="">{' '}</option>
         {options.map((option) => (
           <option key={option} value={option}>{option}</option>
         ))}
