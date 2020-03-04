@@ -1,12 +1,11 @@
-![logo](src/assets/images/rockerlogo.svg)
-
 # rocker-form
-> It's a tiny form example using React and Redux
+![Node.js CI](https://github.com/jmlavoier/rocker-form/workflows/Node.js%20CI/badge.svg)
+> A tiny form example using React and Redux
 
 ### Environment
-- **node**
-- **yarn**
-- **git**
+- **node@12.13.0**
+- **yarn@1.22.0**
+- **git@2.24.0**
 
 ### Installing / Getting started
 
@@ -17,20 +16,27 @@ I suppose that you already have **git**, **node** and **yarn** installed in your
 ```shell
 $ git clone git@github.com:jmlavoier/rocker-form.git
 $ cd rocker-form
-$ yarn && yarn start
+$ yarn && yarn dev
 ```
 
-### Dependencies
-- **react**
-- **styled-components**
-
-### Devopment tools
-- **jest**
-- **enzyme**
+### Used technologies
+- **react@16.13.0**
+- **redux@4.0.5**
+- **styled-components@5.0.1**
+- **ES6+**
+- **webpack@4.42.0**
+- **jest@25.1.0**
+- **enzyme@3.11.0**
 
 ### Building
-
-### Tests & lint
-
-### How does it work?
-
+```shell
+$ yarn build
+```
+### Tests
+```shell
+$ yarn test:watch
+```
+### Lint
+```shell
+$ yarn lint
+```
