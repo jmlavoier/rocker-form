@@ -23,30 +23,10 @@ const validationInput = ({ isValid = true }) => {
   `;
 };
 
-const validationWrapper = ({ isValid = true }) => {
-  if (!isValid) {
-    return css`
-      &:before {
-        content: "!";
-        color: ${getColor('danger')};
-        position: absolute;
-        left: 10px;
-        bottom: 8px;
-        font-size: 18px;
-        font-weight: 900;
-      };
-    `;
-  }
-
-  return null;
-};
-
 export const Wrapper = styled.div`
   margin: 0.5em 0;
   width: 100%;
   position: relative;
-
-  ${validationWrapper}
 `;
 
 export const InputStyled = styled.input`
