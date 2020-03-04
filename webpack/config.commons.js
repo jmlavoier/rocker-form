@@ -1,7 +1,7 @@
 const path = require('path');
 
 const PATHS = {
-  public: path.resolve(__dirname, '../public'),
+  public: path.resolve(__dirname, '../docs'),
   src: path.resolve(__dirname, '../src'),
 };
 
