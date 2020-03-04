@@ -1,7 +1,11 @@
-import { createStore } from 'redux';
+import { combineReducers, createStore } from 'redux';
 
-import { reducer } from './reducers';
+import form from './formState/reducer';
 
-const store = createStore(reducer);
+const reducers = combineReducers({
+  form,
+});
+
+const store = createStore(reducers);
 
 export default store;
