@@ -7,6 +7,7 @@ import validations from '~/validations';
 import Input from '../Input';
 import Select from '../Select';
 import Button from '../Button';
+import Logo from '../Logo';
 import Box from '../Box';
 import {
   Wrapper,
@@ -38,9 +39,10 @@ const App = () => {
 
   return (
     <Wrapper>
-      <Box width="400px">
+      <Box>
         <Header>
-          Rocker Form
+          <Logo />
+          <Box>A tiny form example using React and Redux</Box>
         </Header>
         <Content>
           <Input
