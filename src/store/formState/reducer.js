@@ -1,4 +1,4 @@
-import { CHANGE_FIELD } from './constants';
+import { CHANGE_FIELD, ERASE_FORM } from './constants';
 
 const initialState = {
   ssn: {
@@ -24,6 +24,7 @@ const initialState = {
 };
 
 const form = (state = initialState, action) => {
+  console.log('reducer', action)
   switch (action.type) {
     case CHANGE_FIELD: {
       const {
@@ -42,6 +43,9 @@ const form = (state = initialState, action) => {
         },
       };
     }
+
+    case ERASE_FORM:
+      return initialState;
     default: return state;
   }
 };

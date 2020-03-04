@@ -1,4 +1,4 @@
-import { CHANGE_FIELD } from './constants';
+import { CHANGE_FIELD, ERASE_FORM } from './constants';
 
 export const changeField = (fieldName, value, errorMessage) => ({
   type: CHANGE_FIELD,
@@ -7,4 +7,8 @@ export const changeField = (fieldName, value, errorMessage) => ({
     value,
     errorMessage,
   },
+});
+
+export const eraseForm = () => ({
+  type: ERASE_FORM,
 });
