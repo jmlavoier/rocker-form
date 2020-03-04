@@ -7486,6 +7486,11 @@ supports-hyperlinks@^2.0.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
+swedish-ssn-tool@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/swedish-ssn-tool/-/swedish-ssn-tool-1.0.0.tgz#eb488476437c25f04daac1f54513c0e64c1a010c"
+  integrity sha512-F4HJWUyH1iHOGInHYaTz6vkyZrdm/jvgGBfqHSaA97D5bo5qoUqv4M8CcOOtHAeNbXfkYrhWCxJNXpR3dQtEhg==
+
 symbol-observable@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"

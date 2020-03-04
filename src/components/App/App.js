@@ -2,6 +2,7 @@ import React from 'react';
 
 import useForm from '~/hooks/useForm';
 import useFetchCountries from '~/hooks/useFetchCountries';
+import validations from '~/validations';
 
 import Input from '../Input';
 import Select from '../Select';
@@ -14,19 +15,18 @@ import {
   Footer,
 } from './App.style';
 
+const {
+  ssnValidation,
+  emailValidation,
+  phoneValidation,
+  countryValidation,
+} = validations;
+
 const fieldsSchema = {
-  ssn: {
-    validation: (value) => (!value ? 'should have at least one character' : ''),
-  },
-  email: {
-    validation: (value) => (!value ? 'should have at least one character' : ''),
-  },
-  phone: {
-    validation: (value) => (!value ? 'should have at least one character' : ''),
-  },
-  country: {
-    validation: (value) => (!value ? 'should have at least one character' : ''),
-  },
+  ssn: { validation: ssnValidation },
+  email: { validation: emailValidation },
+  phone: { validation: phoneValidation },
+  country: { validation: countryValidation },
 };
 
 const App = () => {
@@ -48,18 +48,22 @@ const App = () => {
             value={ssn.value}
             onChange={changeField('ssn')}
             errorMessage={ssn.errorMessage}
+            placeholder="YYMMDD-XXXX"
+            maxLength={13}
           />
           <Input
             name="email"
             value={email.value}
             onChange={changeField('email')}
             errorMessage={email.errorMessage}
+            placeholder="youname@provador.com"
           />
           <Input
             name="phone"
             value={phone.value}
             onChange={changeField('phone')}
             errorMessage={phone.errorMessage}
+            maxLength={16}
           />
           <Select
             name="country"

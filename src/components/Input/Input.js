@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import {
   oneOfType, string, number, func,
@@ -7,7 +8,7 @@ import { Wrapper, InputStyled, Label } from './Input.style';
 
 const Input = ({
   name, value, onChange, errorMessage,
-  placeholder,
+  ...props
 }) => {
   const isValid = errorMessage === '';
 
@@ -19,7 +20,7 @@ const Input = ({
         value={value}
         onChange={onChange}
         isValid={isValid}
-        placeholder={placeholder}
+        {...props}
       />
     </Wrapper>
   );
