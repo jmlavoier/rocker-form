@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const spaces = css`
-  padding: 5px;
+  padding: 0.5em 0;
   mading: 0;
 `;
 
