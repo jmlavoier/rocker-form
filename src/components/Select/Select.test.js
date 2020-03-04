@@ -69,9 +69,9 @@ describe('Select', () => {
       </ThemeProvider>,
     );
 
-    expect(wrapper.find('option')).toHaveLength(2);
-    expect(wrapper.find('option').at(0).text()).toEqual('Brazil');
-    expect(wrapper.find('option').at(1).text()).toEqual('Sweden')
+    expect(wrapper.find('option')).toHaveLength(3);
+    expect(wrapper.find('option').at(1).text()).toEqual('Brazil');
+    expect(wrapper.find('option').at(2).text()).toEqual('Sweden')
 
   });
 });
