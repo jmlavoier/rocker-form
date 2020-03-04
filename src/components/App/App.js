@@ -1,6 +1,7 @@
 import React from 'react';
 
 import useForm from '~/hooks/useForm';
+import useFetchCountries from '~/hooks/useFetchCountries';
 
 import Input from '../Input';
 import Select from '../Select';
@@ -14,6 +15,7 @@ import {
 } from './App.style';
 
 const App = () => {
+  const countries = useFetchCountries();
   const [fields, changeField] = useForm('form', {
     ssn: {
       validation: (value) => (!value ? 'should have at least one character' : ''),
@@ -63,7 +65,7 @@ const App = () => {
             value={country.value}
             onChange={changeField('country')}
             errorMessage={country.errorMessage}
-            options={['xa', 'xi']}
+            options={countries}
           />
         </Content>
         <Footer>
